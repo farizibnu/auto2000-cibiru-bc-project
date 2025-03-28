@@ -73,6 +73,7 @@ export default function CarDetail() {
       }
       setOpen(false);
     } catch (error) {
+      console.error("Terjadi kesalahan saat menghubungi server:", error);
       alert("Terjadi kesalahan saat menghubungi server.");
     }
   };
