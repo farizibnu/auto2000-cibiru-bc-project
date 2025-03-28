@@ -3,12 +3,11 @@ import {
     SidebarContent,
     SidebarGroup,
     SidebarGroupContent,
-    SidebarGroupLabel,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { MdBookOnline, MdPriceChange, MdOutlineModeOfTravel, MdCarRepair } from "react-icons/md";
+import { MdBookOnline, MdPriceChange, MdOutlineModeOfTravel } from "react-icons/md";
 
 
 // Menu items.

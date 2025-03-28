@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import { useState } from "react";
+import { AlertDialog, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogFooter, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import {
     Popover,
     PopoverContent,
@@ -18,6 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { format } from "date-fns";
 import carsData from "../cars.json";
+import Link from "next/link";
 
 export default function Features() {
     const [open, setOpen] = useState(false);
@@ -141,14 +142,14 @@ export default function Features() {
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>
-                <a className="from-blue-600 to-blue-900 bg-gradient-to-b w-full h-24 rounded-lg relative" href="/estimation">
+                <Link className="from-blue-600 to-blue-900 bg-gradient-to-b w-full h-24 rounded-lg relative" href="/estimation">
                     <img className="w-auto h-12 absolute right-0 top-0" src="../images/menu-money.png" alt="" />
                     <p className="text-white text-[8px] p-2 absolute bottom-0">Estimasi Harga</p>
-                </a>
-                <a className="from-red-500 to-red-800 bg-gradient-to-b w-full h-24 rounded-lg relative" href="/estimation">
+                </Link>
+                <Link className="from-red-500 to-red-800 bg-gradient-to-b w-full h-24 rounded-lg relative" href="/estimation">
                     <img className="w-auto h-10 absolute right-0 top-2" src="../images/menu-car.png" alt="" />
                     <p className="text-white text-[8px] p-2 absolute bottom-0">B&P Salon</p>
-                </a>
+                </Link>
             </div>
             <div className="w-full my-4 bg-red-500 bg-[url(/images/features.jpeg)] bg-blend-soft-light bg-local bg-cover bg-bottom">
                 <div className="flex items-center justify-center p-2">
