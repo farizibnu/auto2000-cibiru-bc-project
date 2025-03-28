@@ -27,7 +27,7 @@ export default function Features() {
     const [keluhan, setKeluhan] = useState("");
     const carOptions = carsData.map(car => car.name);
 
-    const NGROK_URL = "https://f5a5-114-10-149-112.ngrok-free.app";
+    const NGROK_URL = "https://4878-114-10-148-115.ngrok-free.app";
 
     const handleSendWhatsApp = async () => {
         if (!noPolisi || !selectedCar || !selectedDate || !keluhan) {

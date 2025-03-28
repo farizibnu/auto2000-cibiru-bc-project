@@ -9,7 +9,7 @@ import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
 import { Button } from "@/components/ui/button";
 import { MdChevronLeft, MdWhatsapp } from "react-icons/md";
 
-const NGROK_URL = "https://f5a5-114-10-149-112.ngrok-free.app";
+const NGROK_URL = "https://4878-114-10-148-115.ngrok-free.app";
 
 export default function CarDetail() {
   const { id } = useParams();
