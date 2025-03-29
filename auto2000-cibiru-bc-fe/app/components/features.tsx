@@ -28,14 +28,51 @@ export default function Features() {
     const [keluhan, setKeluhan] = useState("");
     const carOptions = carsData.map(car => car.name);
 
-    const NGROK_URL = "https://4dc6-114-10-146-52.ngrok-free.app";
+    // const NGROK_URL = "https://4dc6-114-10-146-52.ngrok-free.app";
 
-    const handleSendWhatsApp = async () => {
+    // const handleSendWhatsApp = async () => {
+    //     if (!noPolisi || !selectedCar || !selectedDate || !keluhan) {
+    //         alert("Harap lengkapi semua data sebelum mengirim pesan WhatsApp.");
+    //         return;
+    //     }
+
+    //     const formattedDate = format(selectedDate, "PPP");
+    //     const message =
+    //         `*🔧 JADWAL SERVIS KENDARAAN*\n` +
+    //         `==============================\n` +
+    //         `🚗 *Nomor Polisi:* ${noPolisi}\n` +
+    //         `🚘 *Tipe Kendaraan:* ${selectedCar}\n` +
+    //         `📅 *Tanggal Servis:* ${formattedDate}\n` +
+    //         `🛠 *Keluhan:* _${keluhan}_\n` +
+    //         `==============================\n` +
+    //         `Mohon konfirmasinya, terima kasih! 🙏`;
+    //     try {
+    //         const response = await fetch(`${NGROK_URL}/send-message`, {
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json" },
+    //             body: JSON.stringify({ phone: "6289656404198", message })
+    //         });
+    //         const result = await response.json();
+    //         if (result.success) {
+    //             alert("Pesan berhasil dikirim melalui WhatsApp!");
+    //             console.log(result.message);
+    //         } else {
+    //             alert("Gagal mengirim pesan: " + result.error);
+    //             console.error(result.error);
+    //         }
+    //         setOpen(false);
+    //     } catch (error) {
+    //         alert("Terjadi kesalahan saat menghubungi server.");
+    //         console.error(error);
+    //     }
+    // };
+
+    const handleSendWhatsApp = () => {
         if (!noPolisi || !selectedCar || !selectedDate || !keluhan) {
             alert("Harap lengkapi semua data sebelum mengirim pesan WhatsApp.");
             return;
         }
-
+    
         const formattedDate = format(selectedDate, "PPP");
         const message =
             `*🔧 JADWAL SERVIS KENDARAAN*\n` +
@@ -46,26 +83,13 @@ export default function Features() {
             `🛠 *Keluhan:* _${keluhan}_\n` +
             `==============================\n` +
             `Mohon konfirmasinya, terima kasih! 🙏`;
-        try {
-            const response = await fetch(`${NGROK_URL}/send-message`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ phone: "6289656404198", message })
-            });
-            const result = await response.json();
-            if (result.success) {
-                alert("Pesan berhasil dikirim melalui WhatsApp!");
-                console.log(result.message);
-            } else {
-                alert("Gagal mengirim pesan: " + result.error);
-                console.error(result.error);
-            }
-            setOpen(false);
-        } catch (error) {
-            alert("Terjadi kesalahan saat menghubungi server.");
-            console.error(error);
-        }
-    };
+    
+        const encodedMessage = encodeURIComponent(message);
+        const phoneNumber = "6289656404198"; 
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+        window.open(whatsappUrl, "_blank");
+    };    
 
     return (
         <div className="">
@@ -133,7 +157,7 @@ export default function Features() {
                         </div>
                         <AlertDialogFooter>
                             <div className="flex justify-between gap-2">
-                                <Button className="font-semibold bg-red-50 text-rose-700 hover:bg-rose-500 hover:text-white" size={"sm"} variant="ghost" onClick={() => { setSelectedDate(undefined); setNoPolisi(""); setKeluhan(""); }}>Reset</Button>
+                                <Button className="font-semibold bg-red-50 text-rose-700 active:bg-rose-500 hover:text-white" size={"sm"} variant="ghost" onClick={() => { setSelectedDate(undefined); setNoPolisi(""); setKeluhan(""); }}>Reset</Button>
                                 <div className="flex gap-2">
                                     <Button className="font-semibold" size={"sm"} variant="outline" onClick={() => setOpen(false)}>Batal</Button>
                                     <Button className="bg-green-500 font-semibold hover:bg-green-500" size={"sm"} onClick={handleSendWhatsApp}>Teruskan<MdWhatsapp className="-mx-1" /></Button>
