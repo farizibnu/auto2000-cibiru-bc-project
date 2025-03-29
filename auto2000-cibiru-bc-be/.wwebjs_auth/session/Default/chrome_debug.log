@@ -1,0 +1,33 @@
+[0329/132500.481:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature xr-spatial-tracking's parameters are ignored.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'attribution-reporting'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'compute-pressure'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-issuance'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'shared-storage'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'shared-storage-select-url'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'private-state-token-redemption'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'unload'.", source:  (0)
+[0329/132500.482:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'window-management'.", source:  (0)
+[0329/132502.199:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132502.799:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132503.190:INFO:CONSOLE(157)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yL/r/HV4lUpgO_5W.js (157)
+[0329/132522.350:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132552.395:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132622.438:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132652.479:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132722.522:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132752.553:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132822.592:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132852.638:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132922.713:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/132952.733:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133022.768:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133052.797:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133122.846:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133152.886:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133222.924:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133252.959:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133323.015:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133353.049:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133423.100:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file
+[0329/133453.139:ERROR:simple_index_file.cc(302)] Could not create a directory to hold the index file

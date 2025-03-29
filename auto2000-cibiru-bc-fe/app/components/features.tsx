@@ -28,7 +28,7 @@ export default function Features() {
     const [keluhan, setKeluhan] = useState("");
     const carOptions = carsData.map(car => car.name);
 
-    const NGROK_URL = "https://4878-114-10-148-115.ngrok-free.app";
+    const NGROK_URL = "https://4dc6-114-10-146-52.ngrok-free.app";
 
     const handleSendWhatsApp = async () => {
         if (!noPolisi || !selectedCar || !selectedDate || !keluhan) {
@@ -120,8 +120,8 @@ export default function Features() {
                                             mode="single"
                                             selected={selectedDate}
                                             onSelect={setSelectedDate}
-                                            disabled={(date) => date < new Date("1900-01-01")}
-                                            initialFocus
+                                            disabled={{ before: new Date() }}
+                                            autoFocus
                                         />
                                     </PopoverContent>
                                 </Popover>

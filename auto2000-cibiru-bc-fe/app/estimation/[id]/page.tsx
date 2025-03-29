@@ -9,7 +9,7 @@ import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
 import { Button } from "@/components/ui/button";
 import { MdChevronLeft, MdWhatsapp } from "react-icons/md";
 
-const NGROK_URL = "https://4878-114-10-148-115.ngrok-free.app";
+const NGROK_URL = "https://4dc6-114-10-146-52.ngrok-free.app";
 
 export default function CarDetail() {
   const { id } = useParams();
@@ -50,13 +50,15 @@ export default function CarDetail() {
       return;
     }
 
-    const message = `🚗 *Pesanan Servis*\n` +
-      `🚘 Kendaraan: ${car?.name}\n` +
-      `💰 Total Harga: Rp${totalPrice.toLocaleString()}\n\n` +
-      `🛠 *Detail Layanan:*\n` +
+    const message = `*PESANAN SERVIS*\n` +
+      `==============================\n` +
+      `*Kendaraan*: ${car?.name}\n` +
+      `*Detail Layanan:*\n` +
       selectedBodi.map(s => `- ${s.name}: Rp${s.price.toLocaleString()}`).join("\n") + "\n" +
-      selectedSalon.map(s => `- ${s.name}: Rp${s.price.toLocaleString()}`).join("\n") + "\n\n" +
-      `Silakan konfirmasi pesanan Anda. Terima kasih!`;
+      selectedSalon.map(s => `- ${s.name}: Rp${s.price.toLocaleString()}`).join("\n") + "\n" +
+      `*Total Harga: Rp${totalPrice.toLocaleString()}*\n` +
+      `==============================\n` +
+      `Mohon konfirmasinya, Terima kasih!`;
 
     try {
       const response = await fetch(`${NGROK_URL}/send-message`, {
