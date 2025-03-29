@@ -9,8 +9,6 @@ import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
 import { Button } from "@/components/ui/button";
 import { MdChevronLeft, MdWhatsapp } from "react-icons/md";
 
-const NGROK_URL = "https://4dc6-114-10-146-52.ngrok-free.app";
-
 export default function CarDetail() {
   const { id } = useParams();
   const car = carsData.find((c) => c.id.toString() === id);
@@ -60,24 +58,11 @@ export default function CarDetail() {
       `==============================\n` +
       `Mohon konfirmasinya, Terima kasih!`;
 
-    try {
-      const response = await fetch(`${NGROK_URL}/send-message`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: "6289656404198", message })
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        alert("Pesan berhasil dikirim melalui WhatsApp!");
-      } else {
-        alert("Gagal mengirim pesan: " + result.error);
-      }
-      setOpen(false);
-    } catch (error) {
-      console.error("Terjadi kesalahan saat menghubungi server:", error);
-      alert("Terjadi kesalahan saat menghubungi server.");
-    }
+      const encodedMessage = encodeURIComponent(message);
+      const phoneNumber = "6289656404198"; 
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
+      window.open(whatsappUrl, "_blank");
   };
 
   return (
