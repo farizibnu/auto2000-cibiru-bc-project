@@ -13,7 +13,7 @@ import { MdBookOnline, MdPriceChange, MdOutlineModeOfTravel } from "react-icons/
 // Menu items.
 const items = [
     {
-        title: "Jadwal Service",
+        title: "Beranda",
         url: "/",
         icon: MdBookOnline,
     },
@@ -24,7 +24,7 @@ const items = [
     },
     {
         title: "B&P Salon",
-        url: "/",
+        url: "/estimation",
         icon: MdOutlineModeOfTravel,
     },
 ]

@@ -50,6 +50,7 @@ export default function Features() {
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     
         window.open(whatsappUrl, "_blank");
+        setOpen(false);
     };    
 
     return (
@@ -118,7 +119,7 @@ export default function Features() {
                         </div>
                         <AlertDialogFooter>
                             <div className="flex justify-between gap-2">
-                                <Button className="font-semibold bg-red-50 text-rose-700 active:bg-rose-500 hover:text-white" size={"sm"} variant="ghost" onClick={() => { setSelectedDate(undefined); setNoPolisi(""); setKeluhan(""); }}>Reset</Button>
+                                <Button className="font-semibold bg-red-50 text-rose-700 active:bg-rose-500 hover:bg-rose-500 hover:text-white" size={"sm"} variant="ghost" onClick={() => { setSelectedDate(undefined); setNoPolisi(""); setKeluhan(""); }}>Reset</Button>
                                 <div className="flex gap-2">
                                     <Button className="font-semibold" size={"sm"} variant="outline" onClick={() => setOpen(false)}>Batal</Button>
                                     <Button className="bg-green-500 font-semibold hover:bg-green-500" size={"sm"} onClick={handleSendWhatsApp}>Teruskan<MdWhatsapp className="-mx-1" /></Button>

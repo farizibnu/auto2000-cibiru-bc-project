@@ -63,6 +63,7 @@ export default function CarDetail() {
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   
       window.open(whatsappUrl, "_blank");
+      setOpen(false);
   };
 
   return (
