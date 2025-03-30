@@ -12,6 +12,8 @@ import { MdChevronLeft, MdWhatsapp } from "react-icons/md";
 export default function CarDetail() {
   const { id } = useParams();
   const car = carsData.find((c) => c.id.toString() === id);
+  const [errorOpen, setErrorOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
@@ -44,7 +46,8 @@ export default function CarDetail() {
 
   const handleSendWhatsApp = async () => {
     if (selectedServices.length === 0) {
-      alert("Pilih minimal satu layanan sebelum mengirim WhatsApp!");
+      setErrorMessage("Harap pilih minimal satu layanan sebelum melakukan pemesanan.");
+      setErrorOpen(true);
       return;
     }
 
@@ -58,12 +61,12 @@ export default function CarDetail() {
       `==============================\n` +
       `Mohon konfirmasinya, Terima kasih!`;
 
-      const encodedMessage = encodeURIComponent(message);
-      const phoneNumber = "6289656404198"; 
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-  
-      window.open(whatsappUrl, "_blank");
-      setOpen(false);
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = "6289656404198";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+    setOpen(false);
   };
 
   return (
@@ -178,6 +181,20 @@ export default function CarDetail() {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
+
+          {/* Dialog untuk error */}
+          <AlertDialog open={errorOpen} onOpenChange={setErrorOpen}>
+            <AlertDialogContent className="rounded-xl w-10/12 p-6">
+              <AlertDialogHeader>
+                <AlertDialogTitle className="text-red-500 font-bold">Error</AlertDialogTitle>
+              </AlertDialogHeader>
+              <p className="text-sm">{errorMessage}</p>
+              <AlertDialogFooter>
+                <Button className="bg-red-500 hover:bg-red-700 active:bg-red-700" onClick={() => setErrorOpen(false)}>Tutup</Button>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
         </div>
       </div>
     </div>

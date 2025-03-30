@@ -22,6 +22,9 @@ import Link from "next/link";
 
 export default function Features() {
     const [open, setOpen] = useState(false);
+    const [errorOpen, setErrorOpen] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
     const [selectedDate, setSelectedDate] = useState<Date | undefined>();
     const [selectedCar, setSelectedCar] = useState("");
     const [noPolisi, setNoPolisi] = useState("");
@@ -30,28 +33,29 @@ export default function Features() {
 
     const handleSendWhatsApp = () => {
         if (!noPolisi || !selectedCar || !selectedDate || !keluhan) {
-            alert("Harap lengkapi semua data sebelum mengirim pesan WhatsApp.");
+            setErrorMessage("Harap lengkapi semua data sebelum mengirim pesan WhatsApp.");
+            setErrorOpen(true);
             return;
         }
-    
+
         const formattedDate = format(selectedDate, "PPP");
         const message =
-            `*🔧 JADWAL SERVIS KENDARAAN*\n` +
+            `*JADWAL SERVIS KENDARAAN*\n` +
             `==============================\n` +
-            `🚗 *Nomor Polisi:* ${noPolisi}\n` +
-            `🚘 *Tipe Kendaraan:* ${selectedCar}\n` +
-            `📅 *Tanggal Servis:* ${formattedDate}\n` +
-            `🛠 *Keluhan:* ${keluhan}\n` +
+            `*Nomor Polisi:* ${noPolisi}\n` +
+            `*Tipe Kendaraan:* ${selectedCar}\n` +
+            `*Tanggal Servis:* ${formattedDate}\n` +
+            `*Keluhan:* ${keluhan}\n` +
             `==============================\n` +
-            `Mohon konfirmasinya, terima kasih! 🙏`;
-    
+            `Mohon konfirmasinya, terima kasih!`;
+
         const encodedMessage = encodeURIComponent(message);
-        const phoneNumber = "6289656404198"; 
+        const phoneNumber = "6289656404198";
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
+
         window.open(whatsappUrl, "_blank");
         setOpen(false);
-    };    
+    };
 
     return (
         <div className="">
@@ -128,6 +132,20 @@ export default function Features() {
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>
+
+                {/* Dialog untuk error */}
+                <AlertDialog open={errorOpen} onOpenChange={setErrorOpen}>
+                    <AlertDialogContent className="rounded-xl w-10/12 p-6">
+                        <AlertDialogHeader>
+                            <AlertDialogTitle className="text-red-500 font-bold">Error</AlertDialogTitle>
+                        </AlertDialogHeader>
+                        <p className="text-sm">{errorMessage}</p>
+                        <AlertDialogFooter>
+                            <Button className="bg-red-500 hover:bg-red-700 active:bg-red-700" onClick={() => setErrorOpen(false)}>Tutup</Button>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
+
                 <Link className="from-blue-600 to-blue-900 bg-gradient-to-b w-full h-24 rounded-lg relative" href="/estimation">
                     <img className="w-auto h-12 absolute right-0 top-0" src="../images/menu-money.png" alt="" />
                     <p className="text-white text-[8px] p-2 absolute bottom-0">Estimasi Harga</p>

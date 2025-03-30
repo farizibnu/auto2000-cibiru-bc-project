@@ -1,4 +1,5 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 export default function Navbar() {
     return (
@@ -7,9 +8,9 @@ export default function Navbar() {
                 <SidebarTrigger/>
             </div>
             <h1 className="col-span-4 col-start-2">
-                <div className="flex items-center gap-2">
+                <Link href={"/"} className="flex items-center gap-2">
                     <img className="w-16" src="/logo/auto2000-logo.png" alt="auto2000-logo" />
-                </div>
+                </Link>
             </h1>
         </nav>
     );
