@@ -18,6 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { format } from "date-fns";
 import carsData from "../cars.json";
+import promoData from "../promos.json";
 import Link from "next/link";
 
 export default function Features() {
@@ -47,7 +48,7 @@ export default function Features() {
             `*Tanggal Servis:* ${formattedDate}\n` +
             `*Keluhan:* ${keluhan}\n` +
             `==============================\n` +
-            `Mohon konfirmasinya, terima kasih!`;
+            `Mohon konfirmasinya, Terima kasih!`;
 
         const encodedMessage = encodeURIComponent(message);
         const phoneNumber = "6289656404198";
@@ -137,7 +138,7 @@ export default function Features() {
                 <AlertDialog open={errorOpen} onOpenChange={setErrorOpen}>
                     <AlertDialogContent className="rounded-xl w-10/12 p-6">
                         <AlertDialogHeader>
-                            <AlertDialogTitle className="text-red-500 font-bold">Error</AlertDialogTitle>
+                            <AlertDialogTitle className="text-red-500 font-bold">Peringatan</AlertDialogTitle>
                         </AlertDialogHeader>
                         <p className="text-sm">{errorMessage}</p>
                         <AlertDialogFooter>
@@ -183,32 +184,27 @@ export default function Features() {
                     <p className="border-l-4 border-solid border-red-400 p-2 my-2 text-xs font-bold text-red-500">
                         Promo dan Penawaran Lainnya
                     </p>
-                    <Carousel opts={{
-                        align: "start",
-                    }} className="w-full overflow-x-hidden">
+                    <Carousel opts={{ align: "start" }} className="w-full overflow-x-hidden">
                         <CarouselContent className="-ml-1">
-                            {[
-                                { title: "Promo", subtitle: "Pembersihan Jamur Bodi", price: 55000 },
-                                { title: "Bundling", subtitle: "Servis Berkala", price: 80000 },
-                                { title: "Promo", subtitle: "Cat All Body", price: 110000 },
-                                { title: "Promo", subtitle: "Cat All Body", price: 150000 },
-                            ].map((item, index) => (
+                            {promoData.map((item, index) => (
                                 <CarouselItem key={index} className="pl-1 basis-2/3">
                                     <div className="h-36 rounded-lg border-2 flex flex-col justify-center items-center text-center">
                                         <div className="flex justify-around w-full -mx-2 py-2 items-center">
-                                            <img className="w-auto h-3" src="../logo/auto2000-logo.png" alt="" />
-                                            <div className="text-[8px] text-white font-semibold bg-green-600 rounded-2xl py-1 px-2">Rp. {item.price}</div>
+                                            <img className="w-auto h-3" src="../logo/auto2000-logo.png" alt="Auto2000 Logo" />
+                                            <div className="text-[8px] text-white font-semibold bg-green-600 rounded-2xl py-1 px-2">
+                                                Rp. {item.price}
+                                            </div>
                                         </div>
                                         <p className="text-xs font-semibold">{item.title}</p>
                                         <p className="text-sm font-bold">{item.subtitle}</p>
                                         <div className="flex justify-around w-full -mx-4 py-2 items-center">
                                             <div className="flex flex-col items-center text-[8px]">
                                                 <p>Cabang</p>
-                                                <p>Bandung</p>
+                                                <p>{item.branch}</p>
                                             </div>
                                             <div className="flex flex-col items-center text-[8px]">
                                                 <p>Periode</p>
-                                                <p>Januari</p>
+                                                <p>{item.period}</p>
                                             </div>
                                         </div>
                                     </div>

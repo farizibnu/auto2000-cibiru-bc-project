@@ -153,6 +153,7 @@ export default function CarDetail() {
                   <img src={car.image} alt={car.name} className="w-1/2 mb-2" />
                   <p className="font-bold text-lg uppercase">{car.name}</p>
                   <p className="font-bold mt-4 text-xs">Rp. <span className="text-2xl text-red-500">{totalPrice.toLocaleString()}</span></p>
+                  <p className="text-[9px] text-gray-400 font-medium">* Harga sudah termasuk pajak</p>
                 </div>
                 <div className="flex flex-col gap-2 text-xs mt-4">
                   {selectedBodi.length > 0 && (
@@ -186,7 +187,7 @@ export default function CarDetail() {
           <AlertDialog open={errorOpen} onOpenChange={setErrorOpen}>
             <AlertDialogContent className="rounded-xl w-10/12 p-6">
               <AlertDialogHeader>
-                <AlertDialogTitle className="text-red-500 font-bold">Error</AlertDialogTitle>
+                <AlertDialogTitle className="text-red-500 font-bold">Peringatan</AlertDialogTitle>
               </AlertDialogHeader>
               <p className="text-sm">{errorMessage}</p>
               <AlertDialogFooter>

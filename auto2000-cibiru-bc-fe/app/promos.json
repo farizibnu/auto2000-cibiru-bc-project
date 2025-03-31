@@ -1,0 +1,31 @@
+[
+    {
+      "title": "Promo",
+      "subtitle": "Pembersihan Jamur Bodi",
+      "price": 55000,
+      "branch": "Bandung",
+      "period": "Januari"
+    },
+    {
+      "title": "Bundling",
+      "subtitle": "Servis Berkala",
+      "price": 80000,
+      "branch": "Jakarta",
+      "period": "Februari"
+    },
+    {
+      "title": "Promo",
+      "subtitle": "Cat All Body",
+      "price": 110000,
+      "branch": "Surabaya",
+      "period": "Maret"
+    },
+    {
+      "title": "Promo",
+      "subtitle": "Cat All Body",
+      "price": 150000,
+      "branch": "Yogyakarta",
+      "period": "April"
+    }
+  ]
+  
