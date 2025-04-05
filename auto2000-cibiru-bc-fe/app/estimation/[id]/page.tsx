@@ -62,7 +62,7 @@ export default function CarDetail() {
       `Mohon konfirmasinya, Terima kasih!`;
 
     const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = "6289656404198";
+    const phoneNumber = "628982522000";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     window.open(whatsappUrl, "_blank");

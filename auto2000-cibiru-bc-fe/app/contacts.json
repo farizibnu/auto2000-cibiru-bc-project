@@ -1,15 +1,57 @@
 [
     {
-      "name": "Fariz Muhamad Ibnu Hisyam",
+      "name": "Ilham Widodo",
       "role": "Teknisi",
       "photo": "/images/contact-1.jpg",
-      "phone": "6289656404198"
+      "phone": "6281394375469"
     },
     {
-      "name": "Yung Kai",
+      "name": "Haris Aceng",
       "role": "Teknisi",
       "photo": "/images/contact-2.jpg",
-      "phone": "6289656404198"
+      "phone": "6281904710666"
+    },
+    {
+      "name": "Sutrisna",
+      "role": "Teknisi",
+      "photo": "/images/contact-3.jpg",
+      "phone": "628568371371"
+    },
+    {
+      "name": "Ade Santo Haryoso",
+      "role": "Teknisi",
+      "photo": "/images/contact-4.jpg",
+      "phone": "6285694905840"
+    },
+    {
+      "name": "Fauzi Satria",
+      "role": "Teknisi",
+      "photo": "/images/contact-5.jpg",
+      "phone": "6289636991995"
+    },
+    {
+      "name": "Jepri M. Sigit",
+      "role": "Teknisi",
+      "photo": "/images/contact-6.jpg",
+      "phone": "6281947160288"
+    },
+    {
+      "name": "Saepul Anwar",
+      "role": "Teknisi",
+      "photo": "/images/contact-7.jpg",
+      "phone": "6281323181226"
+    },
+    {
+      "name": "Tegar Nurtriawan",
+      "role": "Teknisi",
+      "photo": "/images/contact-8.jpg",
+      "phone": "6281220003239"
+    },
+    {
+      "name": "Rusdi",
+      "role": "Teknisi",
+      "photo": "/images/contact-9.jpg",
+      "phone": "6281218832678"
     }
   ]
   

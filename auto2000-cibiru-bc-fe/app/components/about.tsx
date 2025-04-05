@@ -17,10 +17,12 @@ export default function About() {
                 <div className="flex justify-between">
                     <img className="w-12" src="/logo/auto2000-logo.png" alt="about-auto2000" />
                     <div className="flex gap-2 text-[7px]">
-                        <p>Promo</p>
-                        <p>Booking</p>
-                        <p>Estimasi Harga</p>
-                        <p>B&P Salon</p>
+                        <Link href={"/estimation"}>
+                            <p>Estimasi Harga</p>
+                        </Link>
+                        <Link href={"/estimation"}>
+                            <p>B&P Salon</p>
+                        </Link>
                     </div>
                 </div>
                 <hr className="border-black" />
